@@ -1,0 +1,7 @@
+<div style="text-align:center">
+  <h1>图片转 PDF 工具</h1>
+  <app-image-upload></app-image-upload>
+  <div style="margin-top:24px;">
+    <button mat-raised-button type="button" (click)="generatePdf()" [disabled]="!canGeneratePdf()">一键生成 PDF 并下载</button>
+  </div>
+</div>

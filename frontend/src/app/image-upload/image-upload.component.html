@@ -1,0 +1,16 @@
+<div class="image-upload-container">
+  <label class="custom-upload-btn">
+    <input type="file" (change)="onFileSelected($event)" multiple accept="image/png,image/jpeg,image/jpg" />
+    <span>选择图片文件</span>
+  </label>
+  <div class="image-preview-list">
+    <div class="image-preview-item" *ngFor="let img of images; let i = index">
+      <img [src]="img.url" alt="预览" class="preview-img" />
+      <div class="image-actions">
+        <button mat-raised-button type="button" (click)="moveImageUp(i)" [disabled]="i === 0">上移</button>
+        <button mat-raised-button type="button" (click)="moveImageDown(i)" [disabled]="i === images.length - 1">下移</button>
+        <button mat-raised-button type="button" (click)="removeImage(i)">移除</button>
+      </div>
+    </div>
+  </div>
+</div>
